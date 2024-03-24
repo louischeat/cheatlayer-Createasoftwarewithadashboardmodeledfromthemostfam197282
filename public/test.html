@@ -1,102 +1,64 @@
 
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Fancy Form</title>
-    <style>
-      body {
-        background-color: #ee;
-        font-family: Arial, sans-serif;
-      }
-
-      .form-container {
-        background-color: white;
-        margin: 50px auto;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        width: 500px;
-      }
-
-      .form-container h1 {
-        font-size: 30px;
-        margin-bottom: 20px;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .form-group label {
-        margin-bottom: 5px;
-        font-size: 18px;
-      }
-
-      .form-group input[type="text"] {
-        border: none;
-        border-bottom: 2px solid #ddd;
-        font-size: 18px;
-        padding: 5px;
-      }
-
-      .form-group input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        padding: 10px;
-        font-size: 18px;
-        cursor: pointer;
-        margin-top: 10px;
-      }
-
-      .result {
-        margin-top: 20px;
-        font-size: 18px;
-        display: none;
-      }
-
-      .result p {
-        margin-bottom: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="form-container">
-      <h1>Fancy Form</h1>
-      <form>
-        <div class="form-group">
-          <label>Input:</label>
-          <input type="text" id="input-field" required />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAAS Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="flex h-screen bg-gray-200">
+        <div class="p-6 w-64 bg-white shadow-md">
+            <ul id="tabs" class="space-y-3">
+                <li class="tab" data-target="airport">Airport Transfers</li>
+                <li class="tab" data-target="car">Car Rentals</li>
+                <li class="tab" data-target="flights">Flights Search</li>
+                <li class="tab" data-target="tickets">Tickets and Events</li>
+                <li class="tab" data-target="maps">Maps</li>
+                <li class="tab" data-target="hotels">Hotels</li>
+                <li class="tab" data-target="sim">SIM Card</li>
+            </ul>
         </div>
-        <input type="submit" value="Submit" />
-      </form>
-      <div class="result">
-        <p>Result:</p>
-        <div id="result-field"></div>
-      </div>
+        <div class="flex-1 p-10 text-2xl font-bold">
+            <div id="airport" class="tab-content">
+                <script async="" src="https://c1.travelpayouts.com/content?currency=USD&amp;trs=93729&amp;shmarker=214419&amp;locale=en&amp;from=&amp;to=&amp;country=&amp;powered_by=true&amp;height=&amp;wtype=false&amp;transfers_limit=10&amp;bg_color=%23f5f5f5&amp;button_color=%23239a54&amp;button_font_color=%23ffffff&amp;button_hover_color=%230274da&amp;border_color=%23f9ac1a&amp;input_font_color=%23c8ced4&amp;input_bg_color=%23ffffff&amp;input_label_color=%23c8ced4&amp;icon_bg_color=%23ffffff&amp;icon_arrow_color=%236c7c8c&amp;icon_bg_color_mobile=%23f9ac1a&amp;icon_arrow_color_mobile=%23ffffff&amp;autocomplete_font_color=%23373f47&amp;autocomplete_bg_color=%23ffffff&amp;autocomplete_font_color_active=%23ffffff&amp;autocomplete_bg_color_active=%23239a54&amp;loader_color=%23f9ac1a&amp;empty_color=%23373f47&amp;info_bg_color=%23fff0cc&amp;info_icon_color=%234a4a4a&amp;info_caption_color=%234a4a4a&amp;class_background=%23ffffff&amp;class_font_color=%23373f47&amp;class_header_color=%236c7c8c&amp;class_button_background=%2326a65b&amp;class_button_font_color=%23ffffff&amp;class_button_background_hover=%230274da&amp;class_comment_background=%23bfc0c4&amp;class_comment_font=%23bfc0c4&amp;more_background=&amp;more_background_hover=&amp;more_font_color=%230267c1&amp;notification_background=%23f6f1ec&amp;notification_border_color=%23e37f17&amp;notification_color=%23373f47&amp;transfer_background=%23f6f7f8&amp;transfer_background_hover=%23f6f7f8&amp;transfer_font_color=%23373f47&amp;promo_id=2949" charset="utf-8"></script>
+            </div>
+            <div id="car" class="tab-content hidden">
+                <script async="" src="https://tp.media/content?trs=93729&amp;shmarker=214419&amp;locale=en&amp;powered_by=true&amp;border_radius=5&amp;plain=true&amp;show_logo=true&amp;color_background=%23ffca28&amp;color_button=%2355a539&amp;color_text=%23000000&amp;color_input_text=%23000000&amp;color_button_text=%23ffffff&amp;promo_id=4480&amp;campaign_id=10" charset="utf-8"></script>
+            </div>
+            <div id="flights" class="tab-content hidden">
+                <script async="" src="https://tp.media/content?trs=93729&amp;shmarker=214419&amp;locale=en&amp;curr=USD&amp;powered_by=true&amp;border_radius=5&amp;plain=true&amp;color_button=%2355a539&amp;color_button_text=%23ffffff&amp;color_border=%232681ff&amp;promo_id=4132&amp;campaign_id=121" charset="utf-8"></script>
+            </div>
+            <div id="tickets" class="tab-content hidden">
+                <script async="" src="https://c72.travelpayouts.com/content?trs=93729&amp;shmarker=214419&amp;keyword=Soccer&amp;results=10&amp;powered_by=true&amp;promo_id=6086" charset="utf-8"></script>
+            </div>
+            <div id="maps" class="tab-content hidden">
+                <script async="" src="https://tp.media/content?currency=usd&amp;trs=93729&amp;shmarker=214419&amp;lat=51.51&amp;lng=0.06&amp;powered_by=true&amp;search_host=www.aviasales.com%2Fsearch&amp;locale=en&amp;origin=LON&amp;value_min=0&amp;value_max=1000000&amp;round_trip=true&amp;only_direct=false&amp;radius=1&amp;draggable=true&amp;disable_zoom=false&amp;show_logo=false&amp;scrollwheel=false&amp;primary=%233FABDB&amp;secondary=%233FABDB&amp;light=%23ffffff&amp;width=1500&amp;height=500&amp;zoom=2&amp;promo_id=4054&amp;campaign_id=100" charset="utf-8"></script>
+            </div>
+            <div id="hotels" class="tab-content hidden">
+                <script async="" src="https://tp.media/content?currency=usd&amp;trs=93729&amp;shmarker=214419&amp;type=compact&amp;host=search.hotellook.com&amp;locale=en&amp;limit=10&amp;powered_by=true&amp;nobooking=&amp;primary=%23ff8e00&amp;special=%23e0e0e0&amp;promo_id=4026&amp;campaign_id=101" charset="utf-8"></script>
+            </div>
+            <div id="sim" class="tab-content hidden">
+                <iframe name="myIFrame" src="https://tp.media/r?marker=214419&amp;trs=93729&amp;p=2762&amp;u=https%3A%2F%2Fw1.drimsim.com&amp;campaign_id=102" height="500" width="1500"></iframe>
+            </div>
+        </div>
     </div>
     <script>
-      const form = document.querySelector("form");
-      const input = document.getElementById("input-field");
-      const result = document.getElementById("result-field");
-      const resultSection = document.querySelector(".result");
-      
-      form.addEventListener("submit", submitForm);
-
-      async function submitForm(event) {
-        event.preventDefault();
-        const data = { input: input.value };
-        const response = await fetch('/api/request', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(data)
-          })
-        const text = await response.text();
-        result.textContent = text;
-        resultSection.style.display = "block";
-      }
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => item.classList.remove('bg-blue-500', 'text-white'));
+                tab.classList.add('bg-blue-500', 'text-white');
+                const target = tab.getAttribute('data-target');
+                document.querySelectorAll('.tab-content').forEach(box => {
+                    if (box.getAttribute('id') == target) {
+                        box.classList.remove('hidden');
+                    } else {
+                        box.classList.add('hidden');
+                    }
+                });
+            });
+        });
     </script>
-  </body>
-</html>
+
+
+</body><script>if(document.getElementById('cheat_script') != null){  (elem=document.getElementById('cheat_script')).parentNode.removeChild(elem)}</script>
